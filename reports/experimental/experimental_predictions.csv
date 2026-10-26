@@ -1,0 +1,111 @@
+url,actual_label,baseline_predicted,experimental_predicted,phishing_probability,baseline_verdict,experimental_verdict,baseline_risk_score,experimental_risk_score,experimental_badge,is_experimental_correct
+http://account-alert-suspended-notice.info/confirm,1,1,1,0.7568,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,76,danger,True
+https://www.shodan.io/explore,0,0,0,0.0914,LIKELY LEGITIMATE,LIKELY LEGITIMATE,9,9,safe,True
+https://www.w3schools.com/python/,0,0,0,0.3313,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,33,30,safe,True
+http://godaddy-domain-renewal-expired-alert.com/billing,1,1,1,0.6678,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,70,danger,True
+http://royalmail-item-reschedule-fee.org/confirm,1,1,1,0.7535,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,75,danger,True
+http://roblox-free-robux-reward.net/verify_account.php,1,1,1,0.9589,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+https://www.citigroup.com/global/about-us,0,1,0,0.5439,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,54,28,safe,True
+https://uber.com/us/en/ride/,0,1,0,0.6184,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,62,28,safe,True
+http://teams-meeting-join-recording.com/auth/login.php,1,1,1,0.9648,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+https://www.iana.org/domains/reserved,0,0,0,0.4625,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,46,28,safe,True
+http://online-portal-customer-support.xyz/auth.php,1,1,1,0.9538,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,95,danger,True
+http://secure-webmail-migration-portal.com/login.php,1,1,1,0.9545,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,95,danger,True
+https://pypi.org/project/xgboost/,0,0,0,0.2853,LIKELY LEGITIMATE,LIKELY LEGITIMATE,29,28,safe,True
+http://cpanel-webmail-account-quota-update.net/auth,1,1,1,0.7699,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,77,danger,True
+https://helpx.adobe.com/support.html,0,1,0,0.944,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),94,45,warning,True
+http://confirm-login.com/auth/portal,1,1,1,0.8674,LIKELY PHISHING,LIKELY PHISHING,87,87,danger,True
+http://docusign.com.electronic-signature-view.xyz/verify,1,1,1,0.9639,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+http://remote-aquent.com/login/auth,1,1,1,0.9031,LIKELY PHISHING,LIKELY PHISHING,90,90,danger,True
+http://spectrum-charter-account-verification.net/signin,1,1,1,0.7523,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,75,danger,True
+https://www.airbnb.com/help,0,0,0,0.0836,LIKELY LEGITIMATE,LIKELY LEGITIMATE,8,8,safe,True
+https://www.icann.org/resources/pages/mechanisms-2014-03-20-en,0,0,0,0.019,LIKELY LEGITIMATE,LIKELY LEGITIMATE,2,5,safe,True
+https://www.ikea.com/us/en/customer-service/,0,1,0,0.9574,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),96,45,warning,True
+http://steam-community-free-nitro-gift.com/tradeoffer,1,1,1,0.5814,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,70,danger,True
+https://www.paypal.com/us/webapps/mpp/account-selection,0,1,0,0.9635,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),96,45,warning,True
+https://slack.com/features,0,0,0,0.0762,LIKELY LEGITIMATE,LIKELY LEGITIMATE,8,8,safe,True
+https://www.ebay.com/help/home,0,1,0,0.6057,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,61,28,safe,True
+https://www.steampowered.com/about/,0,1,1,0.7879,LIKELY PHISHING,LIKELY PHISHING,79,79,danger,False
+http://verify-identity-checkpoint-support.org/login,1,1,1,0.8161,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,82,danger,True
+https://www.intel.com/content/www/us/en/homepage.html,0,1,0,0.9566,LIKELY PHISHING,LIKELY LEGITIMATE,96,28,safe,True
+https://www.expedia.com/service/,0,1,1,0.7978,LIKELY PHISHING,LIKELY PHISHING,80,80,danger,False
+http://whm-admin-access-verification.top/auth,1,1,1,0.8209,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,82,danger,True
+http://walmart-giftcard-survey-winner.net/claim.php,1,1,1,0.935,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,93,danger,True
+https://www.virustotal.com/gui/home/url,0,1,0,0.9086,LIKELY PHISHING,LIKELY LEGITIMATE,91,28,safe,True
+https://www.target.com/c/target-services/-/N-5511g,0,1,0,0.9074,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),91,45,warning,True
+http://docusign-envelope-view-document.net/auth/sign.php?id=992,1,1,1,0.9602,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+http://epicgames-vbucks-generator-login.com/auth,1,1,1,0.8276,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,83,danger,True
+https://www.bankofamerica.com/credit-cards/,0,0,0,0.1611,LIKELY LEGITIMATE,LIKELY LEGITIMATE,16,16,safe,True
+https://www.dhl.com/global-en/home/tracking.html,0,1,0,0.9198,LIKELY PHISHING,LIKELY LEGITIMATE,92,28,safe,True
+https://www.cloudflare.com/learning/security/what-is-phishing/,0,1,0,0.945,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),95,45,warning,True
+https://gitlab.com/explore,0,0,0,0.1386,LIKELY LEGITIMATE,LIKELY LEGITIMATE,14,14,safe,True
+http://dhl-express-customs-fee-clearance.info/pay,1,1,1,0.8112,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,81,danger,True
+https://www.usps.com/help/contact-us.htm,0,1,0,0.7666,LIKELY PHISHING,LIKELY LEGITIMATE,77,28,safe,True
+https://www.homedepot.com/c/customer_service,0,1,0,0.9496,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),95,45,warning,True
+https://www.cisco.com/c/en/us/products/security/index.html,0,1,0,0.9669,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),97,45,warning,True
+http://adp-payroll-statement-verification.com/auth,1,1,1,0.8268,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,83,danger,True
+https://www.bestbuy.com/site/electronics/customer-service/pcmcat800050000.c,0,1,0,0.9597,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),96,45,warning,True
+http://discord-nitro-free-claim.info/auth/login,1,1,1,0.8899,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,89,danger,True
+https://www.nist.gov/cyberframework,0,0,0,0.0565,LIKELY LEGITIMATE,LIKELY LEGITIMATE,6,6,safe,True
+https://www.tripadvisor.com/HelpCenter,0,0,0,0.3732,SUSPICIOUS (NEEDS REVIEW),SUSPICIOUS (NEEDS REVIEW),37,37,warning,True
+http://steamcommunity.com.trade-offer-confirm.xyz/login,1,1,1,0.9635,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+http://ofcprune.online/secure/checkpoint,1,1,1,0.5555,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,56,70,danger,True
+https://www.chase.com/personal/checking,0,1,0,0.5134,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,51,28,safe,True
+https://www.salesforce.com/products/what-is-salesforce/,0,0,0,0.0786,LIKELY LEGITIMATE,LIKELY LEGITIMATE,8,8,safe,True
+http://cpanel.server-security-checkpoint.xyz/login,1,1,1,0.9564,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+http://ebay-buyer-protection-resolution.net/signin.php,1,1,1,0.9624,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+https://www.paypal.com/us/home,0,1,0,0.7541,LIKELY PHISHING,LIKELY LEGITIMATE,75,28,safe,True
+https://owasp.org/www-project-top-ten/,0,0,0,0.0193,LIKELY LEGITIMATE,LIKELY LEGITIMATE,2,5,safe,True
+http://indeed-resume-submission-update.com/signin,1,1,1,0.7509,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,75,danger,True
+https://www.roblox.com/info/terms,0,1,0,0.5768,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,58,28,safe,True
+https://www.oracle.com/java/technologies/,0,1,0,0.5233,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,52,28,safe,True
+http://banking-auth-security-center.com/signin,1,1,1,0.7253,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,73,danger,True
+https://www.dropbox.com/business,0,0,0,0.3232,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,32,30,safe,True
+https://www.w3.org/Consortium/,0,0,0,0.0734,LIKELY LEGITIMATE,LIKELY LEGITIMATE,7,7,safe,True
+https://www.adobe.com/products/photoshop.html,0,1,0,0.8782,LIKELY PHISHING,LIKELY LEGITIMATE,88,28,safe,True
+https://www.ups.com/us/en/services/tracking.page,0,1,0,0.9662,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),97,45,warning,True
+http://namecheap-account-suspended-action.net/verify,1,1,1,0.7694,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,77,danger,True
+https://www.cisa.gov/resources-tools/resources/phishing-infographic,0,0,0,0.1204,LIKELY LEGITIMATE,LIKELY LEGITIMATE,12,12,safe,True
+http://att-yahoo-mail-synchronization.net/login.php,1,1,1,0.9622,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+http://zoom-meeting-invitation-reconnect.net/join?id=883,1,0,0,0.3562,SUSPICIOUS (NEEDS REVIEW),SUSPICIOUS (NEEDS REVIEW),36,42,warning,False
+http://target-promotional-coupon-reward.info/index.html,1,1,1,0.7475,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,75,danger,True
+https://bitbucket.org/product,0,0,0,0.1108,LIKELY LEGITIMATE,LIKELY LEGITIMATE,11,11,safe,True
+https://www.playstation.com/en-us/support/,0,1,0,0.9415,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),94,45,warning,True
+http://google-meet-secure-connection.xyz/meeting/auth,1,1,1,0.9275,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,93,danger,True
+https://www.lyft.com/rider,0,0,0,0.0624,LIKELY LEGITIMATE,LIKELY LEGITIMATE,6,6,safe,True
+http://zimbra-mail-re-authentication.org/service,1,1,1,0.7525,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,75,danger,True
+http://usps-redelivery-address-confirm.com/tracking,1,1,1,0.9062,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,91,danger,True
+http://verizon-wireless-bill-payment-update.com/pay,1,1,1,0.9045,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,90,danger,True
+http://linkedin-job-application-review.net/auth.php,1,1,1,0.9622,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+https://www.booking.com/content/about.html,0,1,0,0.9059,LIKELY PHISHING,LIKELY LEGITIMATE,91,28,safe,True
+http://dropbox-file-download-transfer.net/auth,1,1,1,0.9174,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,92,danger,True
+https://www.epicgames.com/site/en-US/home,0,1,0,0.8501,LIKELY PHISHING,LIKELY LEGITIMATE,85,28,safe,True
+http://alibaba-supplier-inquiry-document.com/auth.html,1,1,1,0.954,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,95,danger,True
+http://adobe-pdf-cloud-document-share.info/login.php,1,1,1,0.9584,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+http://secure-login-account-update.net/auth,1,1,1,0.812,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,81,danger,True
+https://www.walmart.com/help,0,0,0,0.1194,LIKELY LEGITIMATE,LIKELY LEGITIMATE,12,12,safe,True
+http://workday-employee-portal-signin.net/login.jsp,1,1,1,0.9542,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,95,danger,True
+http://wetransfer-file-download-notification.com/confirm.html,1,1,1,0.9499,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,95,danger,True
+http://ups-parcel-pending-verification.site/index.php,1,1,1,0.9551,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,96,danger,True
+http://comcast-xfinity-email-security-check.info/auth,1,1,1,0.7819,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,78,danger,True
+https://www.fedex.com/en-us/tracking.html,0,1,0,0.7753,LIKELY PHISHING,LIKELY LEGITIMATE,78,28,safe,True
+https://www.wellsfargo.com/help/,0,0,0,0.2125,LIKELY LEGITIMATE,LIKELY LEGITIMATE,21,21,safe,True
+http://webex-conference-session-start.info/signin,1,0,0,0.4567,SUSPICIOUS (NEEDS REVIEW),SUSPICIOUS (NEEDS REVIEW),46,46,warning,False
+https://developer.mozilla.org/en-US/docs/Web/HTTP,0,1,0,0.9487,LIKELY PHISHING,LIKELY LEGITIMATE,95,28,safe,True
+https://www.nintendo.com/us/switch/,0,1,0,0.6782,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,68,28,safe,True
+https://www.zoom.us/pricing,0,0,0,0.1885,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,42,19,safe,True
+https://developer.mozilla.org/en-US/docs/Web/JavaScript,0,1,0,0.9466,LIKELY PHISHING,LIKELY LEGITIMATE,95,28,safe,True
+https://www.spotify.com/us/premium/,0,1,0,0.6519,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,65,28,safe,True
+http://bluehost-cpanel-security-upgrade.com/auth,1,1,1,0.8276,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,83,danger,True
+http://skype-voice-call-message-received.net/confirm,1,1,1,0.702,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,70,danger,True
+https://personasenlinea.net/bancolombia/login,1,1,1,0.8429,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,84,danger,True
+http://hostinger-invoice-payment-overdue.info/pay.php,1,1,1,0.8304,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,83,danger,True
+http://roundcube-email-server-login.info/webmail,1,1,1,0.7535,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,75,danger,True
+http://tmobile-subscriber-identity-verify.com/login,1,1,1,0.8161,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,82,danger,True
+https://www.atlassian.com/software/jira,0,1,0,0.7182,LIKELY PHISHING,LIKELY LEGITIMATE,72,28,safe,True
+http://fedex-package-tracking-reschedule.net/delivery/payment.php,1,1,1,0.9455,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,95,danger,True
+http://updateaccount.co/security/verify,1,1,0,0.6246,SUSPICIOUS (NEEDS REVIEW),SUSPICIOUS (NEEDS REVIEW),62,45,warning,False
+https://www.ibm.com/topics/cybersecurity,0,1,0,0.9334,LIKELY PHISHING,SUSPICIOUS (NEEDS REVIEW),93,45,warning,True
+http://costco-membership-reward-redeem.com/verify,1,1,1,0.752,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,75,danger,True
+https://www.xbox.com/en-US/live,0,0,0,0.3274,SUSPICIOUS (NEEDS REVIEW),LIKELY LEGITIMATE,33,28,safe,True
+http://glassdoor-salary-review-invitation.info/auth,1,1,1,0.8336,SUSPICIOUS (NEEDS REVIEW),LIKELY PHISHING,58,83,danger,True

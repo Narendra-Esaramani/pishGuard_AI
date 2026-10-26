@@ -1,0 +1,116 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Model Architecture & Performance Metrics — PhishGuard AI{% endblock %}
+
+{% block content %}
+<div class="card-section">
+    <div style="margin-bottom: 2rem;">
+        <div class="hero-tag">Trained Machine Learning Model</div>
+        <h1 style="font-size: 2rem; font-weight: 800; color: #fff; margin-top: 0.5rem;">
+            {{ metadata.model_name }} Diagnostic Metrics
+        </h1>
+        <p style="font-size: 0.95rem; color: var(--text-secondary);">
+            Real empirical evaluation results computed on strictly held-out test splits without synthetic fabrication.
+        </p>
+    </div>
+
+    <!-- Metrics Cards Grid -->
+    <div class="workflow-steps" style="margin-top: 0; margin-bottom: 2.5rem;">
+        <div class="step-card">
+            <div class="scanned-label">Test Accuracy</div>
+            <div style="font-size: 2rem; font-weight: 800; color: var(--accent-cyan);">
+                {{ (metadata.metrics.accuracy * 100)|round(2) }}%
+            </div>
+            <div class="step-desc">Overall correct predictions on unseen test data</div>
+        </div>
+
+        <div class="step-card">
+            <div class="scanned-label">Phishing Recall</div>
+            <div style="font-size: 2rem; font-weight: 800; color: var(--color-safe);">
+                {{ (metadata.metrics.recall * 100)|round(2) }}%
+            </div>
+            <div class="step-desc">Phishing detection sensitivity (minimizing false negatives)</div>
+        </div>
+
+        <div class="step-card">
+            <div class="scanned-label">F1-Score</div>
+            <div style="font-size: 2rem; font-weight: 800; color: var(--accent-purple);">
+                {{ (metadata.metrics.f1_score * 100)|round(2) }}%
+            </div>
+            <div class="step-desc">Harmonic mean of precision and recall</div>
+        </div>
+
+        <div class="step-card">
+            <div class="scanned-label">ROC-AUC</div>
+            <div style="font-size: 2rem; font-weight: 800; color: var(--color-warning);">
+                {{ (metadata.metrics.roc_auc * 100)|round(2) }}%
+            </div>
+            <div class="step-desc">Area under receiver operating characteristic curve</div>
+        </div>
+    </div>
+
+    <!-- Multi-Model Comparison Table -->
+    <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">
+        Benchmark Comparison Across Candidate Algorithms
+    </h2>
+    <div class="feature-table-wrapper" style="margin-bottom: 2.5rem;">
+        <table class="feature-table">
+            <thead>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Phishing Recall</th>
+                    <th>F1-Score</th>
+                    <th>ROC-AUC</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for name, m in metadata.all_model_benchmarks.items() %}
+                    <tr {% if name == metadata.model_name %}style="background: rgba(6,182,212,0.12); font-weight:700;"{% endif %}>
+                        <td style="color: #fff;">
+                            {{ name }} {% if name == metadata.model_name %}<span style="color:var(--accent-cyan);">(Active)</span>{% endif %}
+                        </td>
+                        <td>{{ (m.accuracy * 100)|round(2) }}%</td>
+                        <td>{{ (m.precision * 100)|round(2) }}%</td>
+                        <td>{{ (m.recall * 100)|round(2) }}%</td>
+                        <td>{{ (m.f1_score * 100)|round(2) }}%</td>
+                        <td>{{ (m.roc_auc * 100)|round(2) }}%</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Top Influential Features -->
+    <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">
+        Top Influential Features (Random Forest Gini Importance)
+    </h2>
+    <div class="feature-table-wrapper">
+        <table class="feature-table">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Feature Name</th>
+                    <th>Importance Weight</th>
+                    <th>Relative Influence Bar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for feat in metadata.top_features %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td style="font-weight: 600; color: #fff;">{{ feat.feature }}</td>
+                        <td>{{ (feat.importance * 100)|round(2) }}%</td>
+                        <td style="width: 40%;">
+                            <div style="background: #1e293b; height: 8px; border-radius: 4px; overflow: hidden;">
+                                <div style="background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue)); height: 100%; width: {{ (feat.importance * 100 * 3)|round(1) }}%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

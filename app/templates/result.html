@@ -1,0 +1,228 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Security Analysis Report — {{ report.url }}{% endblock %}
+
+{% block content %}
+<div id="report-data" 
+    data-url="{{ report.url }}" 
+    data-pred="{{ report.prediction }}" 
+    data-prob="{{ report.probability }}" 
+    data-score="{{ report.risk_score }}">
+</div>
+
+<!-- Header -->
+<div class="report-header">
+    <div class="scanned-url-box">
+        <div class="scanned-label">Scanned Website Target</div>
+        <div class="scanned-url-text">{{ report.url }}</div>
+        <div class="scanned-time">Analysis completed on {{ report.timestamp }}</div>
+    </div>
+    <div class="report-actions">
+        <a href="{{ url_for('index') }}" class="btn-secondary">← Scan Another URL</a>
+    </div>
+</div>
+
+<!-- Main Report Grid -->
+<div class="report-grid">
+    <!-- Left Column: Verdict & Gauge -->
+    <div class="verdict-card {{ report.badge_class }}">
+        <div class="risk-gauge-wrapper">
+            <svg class="risk-circle-svg" viewBox="0 0 160 160">
+                <circle class="risk-circle-bg" cx="80" cy="80" r="68"></circle>
+                <circle id="gauge-progress" class="risk-circle-progress {{ report.badge_class }}" 
+                    cx="80" cy="80" r="68" 
+                    data-score="{{ report.risk_score }}"
+                    style="stroke-dashoffset: 427;">
+                </circle>
+            </svg>
+            <div class="risk-score-value-box">
+                <div class="risk-score-num">{{ report.risk_score }}</div>
+                <div class="risk-score-max">/ 100</div>
+            </div>
+        </div>
+
+        <div class="risk-badge {{ report.badge_class }}">{{ report.risk_level }}</div>
+        <div class="verdict-title">{{ report.verdict }}</div>
+        <div class="verdict-confidence">Confidence: <strong>{{ report.confidence }}</strong> ({{ (report.probability * 100)|round(1) }}% Probability)</div>
+
+        <!-- Data Quality & Pipeline Mode Info -->
+        <div style="margin-top: 1.5rem; width: 100%; border-top: 1px solid var(--border-color); padding-top: 1rem; font-size: 0.8rem; color: var(--text-secondary); text-align: left;">
+            <div><strong>Active Pipeline:</strong> {{ report.data_quality.pipeline_mode }}</div>
+            <div><strong>Feature Telemetry:</strong> {{ report.data_quality.feature_completeness }}</div>
+            <div><strong>Classifier:</strong> {{ report.model_info.name }}</div>
+            <div><strong>Trained Accuracy:</strong> {{ (report.model_info.accuracy * 100)|round(1) }}%</div>
+        </div>
+    </div>
+
+    <!-- Right Column: Explanations & Evidence -->
+    <div class="report-content-card">
+        <!-- Feature Status & Data Quality -->
+        <div class="section-title">
+            <span>🔍</span> Pipeline Telemetry & Telemetry Status
+        </div>
+        <div class="status-pill-grid">
+            <div class="status-pill">
+                <span class="status-pill-label">URL Lexical Analysis</span>
+                <span class="status-pill-icon ok">✓ 28 Features</span>
+            </div>
+            <div class="status-pill">
+                <span class="status-pill-label">Domain Reputation</span>
+                <span class="status-pill-icon ok">✓ Validated</span>
+            </div>
+            <div class="status-pill">
+                <span class="status-pill-label">Passive HTML DOM</span>
+                {% if report.analysis_status.html_features %}
+                    <span class="status-pill-icon ok">✓ 20 Live Features</span>
+                {% else %}
+                    <span class="status-pill-icon na">⚡ Offline Mode</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Out-of-Distribution Warning if present -->
+        {% if report.data_quality.is_out_of_distribution %}
+            <div style="margin-bottom: 1.25rem; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.35); border-radius: var(--radius-md); padding: 0.85rem 1rem; font-size: 0.85rem; color: #fff;">
+                <strong style="color: var(--color-warning);">⚠️ Out-of-Distribution Note:</strong> {{ report.data_quality.ood_warning }}
+            </div>
+        {% endif %}
+
+        <!-- Critical Security Flags if any -->
+        {% if report.critical_flags %}
+            <div style="margin-bottom: 1.5rem; background: rgba(244,63,94,0.08); border: 1px solid rgba(244,63,94,0.3); border-radius: var(--radius-md); padding: 1rem;">
+                <div style="font-weight: 700; color: var(--color-danger); font-size: 0.9rem; margin-bottom: 0.5rem;">
+                    ⚠ Deception & Anomaly Indicators Detected:
+                </div>
+                <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: #fff;">
+                    {% for flag in report.critical_flags %}
+                        <li style="margin-bottom: 0.25rem;">{{ flag }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <!-- Why did the system flag it? (Explainable AI) -->
+        <div class="section-title">
+            <span>💡</span> Why did the system reach this assessment? (Explainable AI)
+        </div>
+        <div class="explanation-list">
+            {% for reason in report.explanation.summary_reasons %}
+                <div class="explanation-item {{ reason.impact }}">
+                    <div class="explanation-icon">
+                        {% if reason.impact == 'phishing' %}⚠️{% else %}🛡️{% endif %}
+                    </div>
+                    <div class="explanation-text">
+                        {{ reason.text }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- Structured Evidence Breakdown -->
+        <div style="background: #090d16; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.1rem; margin-bottom: 1.5rem;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                Multi-Tier Evidence Synthesis
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.8rem;">
+                <div>
+                    <strong style="color: #fff;">URL Structural Signals:</strong>
+                    <ul style="padding-left: 1.1rem; color: var(--text-secondary); margin-top: 0.3rem;">
+                        {% for ev in report.evidence_summary.url_evidence %}
+                            <li>{{ ev }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div>
+                    <strong style="color: #fff;">Domain Telemetry:</strong>
+                    <ul style="padding-left: 1.1rem; color: var(--text-secondary); margin-top: 0.3rem;">
+                        {% for ev in report.evidence_summary.domain_evidence %}
+                            <li>{{ ev }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collapsible Technical Feature Matrix -->
+        <div class="accordion-wrapper">
+            <div id="tech-accordion-header" class="accordion-header">
+                <span>View Full 48-Feature Technical Breakdown</span>
+                <span id="accordion-icon">▼</span>
+            </div>
+            <div id="tech-accordion-body" class="accordion-body">
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                    Extracted numerical values for all 48 benchmark features and local SHAP feature attributions:
+                </p>
+                <div class="feature-table-wrapper">
+                    <table class="feature-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Feature Name</th>
+                                <th>Extracted Value</th>
+                                <th>SHAP Impact</th>
+                                <th>Direction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for factor in report.explanation.technical_factors %}
+                                <tr>
+                                    <td>{{ loop.index }}</td>
+                                    <td style="font-weight: 600; color: #fff;">{{ factor.feature }}</td>
+                                    <td>{{ factor.value }}</td>
+                                    <td>{{ factor.shap_attribution }}</td>
+                                    <td>
+                                        {% if factor.direction == '+Phishing' %}
+                                            <span style="color: var(--color-danger); font-weight: 700;">+ Risk (Phishing)</span>
+                                        {% else %}
+                                            <span style="color: var(--color-safe); font-weight: 700;">- Risk (Legitimate)</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Robustness Test Section -->
+<div class="card-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">Controlled URL Robustness Evaluation</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Evaluates decision stability by mutating subdomains, path depth, parameters, and special characters.
+            </p>
+        </div>
+        <button type="button" id="btn-run-robustness" class="btn-secondary" data-url="{{ report.url }}">
+            ⚡ Run Robustness Test
+        </button>
+    </div>
+    <div id="robustness-results-container" style="display: none;"></div>
+</div>
+
+<!-- User Feedback Section -->
+<div class="card-section">
+    <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Result Feedback & Model Registry</h3>
+    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem;">
+        Help improve detection quality. Verified feedback is queued for guardrailed model retraining.
+    </p>
+    <div class="feedback-grid">
+        <span style="font-size: 0.9rem; font-weight: 600;">Was this classification accurate?</span>
+        <button type="button" id="btn-feedback-correct" class="btn-feedback">👍 Correct</button>
+        <button type="button" id="btn-feedback-incorrect" class="btn-feedback">👎 Incorrect</button>
+        <div id="feedback-status-msg" style="font-size: 0.85rem;"></div>
+    </div>
+</div>
+
+<!-- Research Disclaimer -->
+<div style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-align: center;">
+    {{ report.disclaimer }}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/result.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{
+    "case_type": "False_Positive",
+    "url": "https://www.wikipedia.org/wiki/Phishing",
+    "actual_label": 0,
+    "predicted_label": 1,
+    "probability": 0.7182,
+    "top_shap_factors": [
+        {
+            "feature": "InsecureForms",
+            "value": 0.0,
+            "shap_value": -1.8408,
+            "impact": "legitimate",
+            "abs_impact": 1.8407714366912842
+        },
+        {
+            "feature": "PctExtResourceUrls",
+            "value": 0.0,
+            "shap_value": 1.697,
+            "impact": "phishing",
+            "abs_impact": 1.6969541311264038
+        },
+        {
+            "feature": "PctExtHyperlinks",
+            "value": 0.0,
+            "shap_value": 1.6288,
+            "impact": "phishing",
+            "abs_impact": 1.628761887550354
+        },
+        {
+            "feature": "NoHttps",
+            "value": 0.0,
+            "shap_value": 1.2286,
+            "impact": "phishing",
+            "abs_impact": 1.2285807132720947
+        },
+        {
+            "feature": "PctExtNullSelfRedirectHyperlinksRT",
+            "value": 1.0,
+            "shap_value": -0.6453,
+            "impact": "legitimate",
+            "abs_impact": 0.6452881693840027
+        },
+        {
+            "feature": "NumNumericChars",
+            "value": 0.0,
+            "shap_value": 0.474,
+            "impact": "phishing",
+            "abs_impact": 0.47395578026771545
+        }
+    ],
+    "base_value": -0.0943
+}

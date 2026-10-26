@@ -1,0 +1,67 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Analysis History — PhishGuard AI{% endblock %}
+
+{% block content %}
+<div class="card-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+            <h1 style="font-size: 1.75rem; font-weight: 800; color: #fff;">Recent Analyses Log</h1>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                Chronological record of recent URL diagnostic queries.
+            </p>
+        </div>
+        <a href="{{ url_for('index') }}" class="btn-secondary">+ New URL Analysis</a>
+    </div>
+
+    {% if history %}
+        <div class="feature-table-wrapper">
+            <table class="feature-table">
+                <thead>
+                    <tr>
+                        <th>Timestamp</th>
+                        <th>Scanned Website URL</th>
+                        <th>Classification</th>
+                        <th>Risk Score</th>
+                        <th>Risk Level</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in history %}
+                        <tr>
+                            <td style="white-space: nowrap;">{{ item.timestamp }}</td>
+                            <td style="font-family: monospace; color: #fff; max-width: 400px; word-break: break-all;">
+                                {{ item.url }}
+                            </td>
+                            <td>
+                                {% if item.prediction == 'phishing' %}
+                                    <span style="color: var(--color-danger); font-weight: 700;">Phishing</span>
+                                {% else %}
+                                    <span style="color: var(--color-safe); font-weight: 700;">Legitimate</span>
+                                {% endif %}
+                            </td>
+                            <td><strong>{{ item.risk_score }}</strong>/100</td>
+                            <td><span class="risk-badge {{ item.badge_class }}" style="font-size: 0.75rem; padding: 0.15rem 0.6rem;">{{ item.risk_level }}</span></td>
+                            <td>
+                                <form action="{{ url_for('analyze_web') }}" method="POST" style="display: inline;">
+                                    <input type="hidden" name="url" value="{{ item.url }}">
+                                    <button type="submit" class="sample-pill" style="border: none; cursor: pointer;">Re-Scan</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div style="text-align: center; padding: 3rem 1rem; color: var(--text-secondary);">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📋</div>
+            <p>No URL analyses recorded in the current session yet.</p>
+            <a href="{{ url_for('index') }}" class="btn-analyze" style="display: inline-flex; margin-top: 1rem; text-decoration: none;">
+                Analyze First URL
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

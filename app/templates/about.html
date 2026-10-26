@@ -1,0 +1,107 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Research & Base Paper Comparison — PhishGuard AI{% endblock %}
+
+{% block content %}
+<div class="card-section">
+    <div style="margin-bottom: 2rem;">
+        <div class="hero-tag">B.Tech CSE Capstone Research Project</div>
+        <h1 style="font-size: 2rem; font-weight: 800; color: #fff; margin-top: 0.5rem;">
+            Research Architecture & Base Paper Comparison
+        </h1>
+        <p style="font-size: 0.95rem; color: var(--text-secondary);">
+            Implementation and enhancement of the IEEE conference publication: 
+            <em>"Enhancing Phishing Detection using Machine Learning Algorithms"</em> (IEEE Xplore ID: 11005375).
+        </p>
+    </div>
+
+    <!-- Base Paper vs Proposed System Comparison -->
+    <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">
+        Comparative Analysis: Base Paper vs. Enhanced Proposed System
+    </h2>
+    <div class="feature-table-wrapper" style="margin-bottom: 2.5rem;">
+        <table class="feature-table">
+            <thead>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Base Paper Paradigm</th>
+                    <th>PhishGuard Enhanced System</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 700; color: #fff;">Feature Extraction</td>
+                    <td>Static CSV dataset requiring manual 48-feature entry.</td>
+                    <td><strong>100% Automated Live Extraction</strong> from user-entered URL.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700; color: #fff;">Web Analysis Scope</td>
+                    <td>Pre-compiled offline feature tables only.</td>
+                    <td><strong>Hybrid Pipeline</strong>: Lexical URL + Domain DNS + Passive HTML DOM.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700; color: #fff;">Explainability</td>
+                    <td>Black-box classification outputs without rationale.</td>
+                    <td><strong>SHAP & LIME XAI</strong> translated into natural human-readable bullets.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700; color: #fff;">Adversarial Stability</td>
+                    <td>No perturbation or robustness testing.</td>
+                    <td><strong>Controlled Robustness Suite</strong> with 5 mutation operators.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700; color: #fff;">Risk Representation</td>
+                    <td>Binary 0/1 output without calibration.</td>
+                    <td><strong>0-100 Calibrated Risk Score</strong> with confidence grading.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700; color: #fff;">Feedback Loop</td>
+                    <td>Static trained weights; no feedback collection.</td>
+                    <td><strong>Verified Feedback Registry & Retraining Pipeline</strong> with guardrails.</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 700; color: #fff;">Security Safeguards</td>
+                    <td>Unaddressed.</td>
+                    <td><strong>SSRF Prevention</strong>, timeout limits, passive scraping protections.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- System Methodology -->
+    <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem;">
+        Multi-Tier Enhanced Architecture
+    </h2>
+    <div class="workflow-steps" style="margin-top: 0; margin-bottom: 2rem;">
+        <div class="step-card">
+            <div class="step-title">1. Feature Engineering</div>
+            <div class="step-desc">
+                26 URL structural features, 6 Domain indicators, 16 HTML/DOM elements, and 6 benchmark Rule-Threshold derivations.
+            </div>
+        </div>
+        <div class="step-card">
+            <div class="step-title">2. Model Optimization</div>
+            <div class="step-desc">
+                Ensemble learning evaluated across Random Forest, XGBoost, Decision Tree, Logistic Regression, KNN, and SVM.
+            </div>
+        </div>
+        <div class="step-card">
+            <div class="step-title">3. Explainable AI (XAI)</div>
+            <div class="step-desc">
+                Local feature attribution via Shapley values mapped to intuitive security explanations for end users and analysts.
+            </div>
+        </div>
+        <div class="step-card">
+            <div class="step-title">4. Retraining Safety</div>
+            <div class="step-desc">
+                Automated regression testing prevents performance degradation before deploying retrained model candidates.
+            </div>
+        </div>
+    </div>
+
+    <!-- Prototype Disclaimer -->
+    <div style="background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.3); border-radius: var(--radius-md); padding: 1.25rem; font-size: 0.85rem; color: #fff;">
+        <strong>Research Disclaimer:</strong> This system is developed as an academic research prototype. Machine learning classifications reflect statistical correlations in feature distributions and should be used in conjunction with defense-in-depth cybersecurity controls.
+    </div>
+</div>
+{% endblock %}

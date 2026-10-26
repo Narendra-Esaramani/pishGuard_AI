@@ -1,0 +1,90 @@
+﻿{% extends "base.html" %}
+
+{% block title %}PhishGuard AI — Intelligent Phishing Detection & Explainability{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-tag">IEEE Xplore ID: 11005375 Enhanced Implementation</div>
+    <h1 class="hero-title">Explainable Phishing Website Detection</h1>
+    <p class="hero-subtitle">
+        Enter any website URL for automated 48-feature extraction, hybrid URL/domain/HTML analysis, 
+        machine learning classification, risk scoring, and explainable AI insights.
+    </p>
+
+    <!-- Main Analyzer Card -->
+    <div class="analyzer-card">
+        <form id="analyzer-form" action="{{ url_for('analyze_web') }}" method="POST">
+            <div class="url-input-group">
+                <div class="url-input-wrapper">
+                    <span class="url-icon">🔗</span>
+                    <input 
+                        type="text" 
+                        name="url" 
+                        id="url-input" 
+                        class="url-input" 
+                        placeholder="https://example.com/login" 
+                        required 
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                </div>
+                <button type="submit" id="btn-analyze" class="btn-analyze">
+                    <span>Analyze URL</span>
+                    <span>→</span>
+                </button>
+            </div>
+
+            <!-- Quick Samples -->
+            <div class="sample-urls">
+                <span style="font-weight: 600; color: var(--text-muted);">Quick Test Samples:</span>
+                <button type="button" class="sample-pill" data-url="https://www.wikipedia.org">Wikipedia (Safe)</button>
+                <button type="button" class="sample-pill" data-url="https://www.google.com/search?q=cybersecurity">Google Search (Safe)</button>
+                <button type="button" class="sample-pill" data-url="http://paypal-security-verification.account-update.net/login.php?token=98234">PayPal Spoof (Phishing)</button>
+                <button type="button" class="sample-pill" data-url="http://appleid.apple.com.manage-account.info/auth/verify?session=x9">AppleID Bait (Phishing)</button>
+                <button type="button" class="sample-pill" data-url="http://192.168.1.100/admin/secure_portal">IP Host (Suspicious)</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- 4-Step Analysis Workflow -->
+<div style="margin-top: 1.5rem;">
+    <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; text-align: center; margin-bottom: 1.5rem;">
+        Complete Automated Defense Pipeline
+    </h2>
+
+    <div class="workflow-steps">
+        <div class="step-card">
+            <div class="step-icon">1</div>
+            <div class="step-title">URL Validation</div>
+            <div class="step-desc">
+                Validates format, normalizes syntax, checks private IP ranges, and blocks SSRF vectors.
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">2</div>
+            <div class="step-title">Automatic Extraction</div>
+            <div class="step-desc">
+                Computes 48 features across lexical structure, domain metadata, and passive HTML DOM properties.
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">3</div>
+            <div class="step-title">ML Risk Scoring</div>
+            <div class="step-desc">
+                Evaluates feature vector against high-accuracy trained ensemble (98.8% accuracy) to produce a 0-100 score.
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">4</div>
+            <div class="step-title">Explainable AI</div>
+            <div class="step-desc">
+                SHAP TreeExplainer attributes specific feature factors translated into natural, human-readable explanations.
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

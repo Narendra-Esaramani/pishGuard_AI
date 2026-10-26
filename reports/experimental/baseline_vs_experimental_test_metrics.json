@@ -1,0 +1,38 @@
+{
+    "held_out_test_samples": 110,
+    "optimal_threshold_used": 0.5,
+    "brier_score_loss": 0.2407,
+    "baseline": {
+        "tp": 53,
+        "tn": 22,
+        "fp": 33,
+        "fn": 2,
+        "accuracy": 68.18,
+        "precision": 61.63,
+        "recall": 96.36,
+        "specificity": 40.0,
+        "f1_score": 75.18,
+        "fpr": 60.0,
+        "fnr": 3.64
+    },
+    "experimental": {
+        "tp": 52,
+        "tn": 53,
+        "fp": 2,
+        "fn": 3,
+        "accuracy": 95.45,
+        "precision": 96.3,
+        "recall": 94.55,
+        "specificity": 96.36,
+        "f1_score": 95.41,
+        "fpr": 3.64,
+        "fnr": 5.45
+    },
+    "delta": {
+        "false_positives": -31,
+        "false_negatives": 1,
+        "accuracy_change": 27.27,
+        "f1_change": 20.24,
+        "fpr_reduction": 56.36
+    }
+}

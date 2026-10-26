@@ -1,0 +1,4 @@
+url,actual_label,baseline_predicted,experimental_predicted,phishing_probability,baseline_verdict,experimental_verdict,baseline_risk_score,experimental_risk_score,experimental_badge,is_experimental_correct
+http://zoom-meeting-invitation-reconnect.net/join?id=883,1,0,0,0.3562,SUSPICIOUS (NEEDS REVIEW),SUSPICIOUS (NEEDS REVIEW),36,42,warning,False
+http://webex-conference-session-start.info/signin,1,0,0,0.4567,SUSPICIOUS (NEEDS REVIEW),SUSPICIOUS (NEEDS REVIEW),46,46,warning,False
+http://updateaccount.co/security/verify,1,1,0,0.6246,SUSPICIOUS (NEEDS REVIEW),SUSPICIOUS (NEEDS REVIEW),62,45,warning,False

@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches and test runners
+.pytest_cache/
+CACHEDIR.TAG
+v/
+v/cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*.bak
+
+# Environment Variables & Secrets (NEVER COMMIT SECRETS)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Temporary / Local Logs & Databases
+*.log
+logs/*.log
+*.sqlite3
+*.db
+
+# Explicitly ensure required model artifacts and datasets are tracked
+!models/*.pkl
+!models/*.json
+!data/raw/*.csv
+!data/processed/*.csv
+

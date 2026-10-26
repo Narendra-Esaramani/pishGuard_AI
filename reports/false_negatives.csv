@@ -1,0 +1,3 @@
+url,actual_label,predicted_label,phishing_probability,risk_score,verdict,source,error_reason
+http://zoom-meeting-invitation-reconnect.net/join?id=883,1,0,0.3562,36,SUSPICIOUS (NEEDS REVIEW),PhishTank_Verified_7871,"Short URL root without deep path, lower lexical keyword density, or offline domain telemetry"
+http://webex-conference-session-start.info/signin,1,0,0.4567,46,SUSPICIOUS (NEEDS REVIEW),PhishTank_Verified_7873,"Short URL root without deep path, lower lexical keyword density, or offline domain telemetry"

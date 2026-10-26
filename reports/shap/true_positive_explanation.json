@@ -1,0 +1,52 @@
+{
+    "case_type": "True_Positive",
+    "url": "http://paypal-security-verification.account-update.net/login.php?token=98234",
+    "actual_label": 1,
+    "predicted_label": 1,
+    "probability": 0.9237,
+    "top_shap_factors": [
+        {
+            "feature": "InsecureForms",
+            "value": 0.0,
+            "shap_value": -1.9342,
+            "impact": "legitimate",
+            "abs_impact": 1.934243083000183
+        },
+        {
+            "feature": "NumSensitiveWords",
+            "value": 3.0,
+            "shap_value": 1.7109,
+            "impact": "phishing",
+            "abs_impact": 1.710924744606018
+        },
+        {
+            "feature": "PathLevel",
+            "value": 1.0,
+            "shap_value": -1.4298,
+            "impact": "legitimate",
+            "abs_impact": 1.429768443107605
+        },
+        {
+            "feature": "NumDashInHostname",
+            "value": 3.0,
+            "shap_value": 1.0814,
+            "impact": "phishing",
+            "abs_impact": 1.0814234018325806
+        },
+        {
+            "feature": "PctExtResourceUrls",
+            "value": 0.0,
+            "shap_value": 1.0071,
+            "impact": "phishing",
+            "abs_impact": 1.0070781707763672
+        },
+        {
+            "feature": "PctExtHyperlinks",
+            "value": 0.0,
+            "shap_value": 0.8168,
+            "impact": "phishing",
+            "abs_impact": 0.8167742490768433
+        }
+    ],
+    "base_value": -0.0943
+}

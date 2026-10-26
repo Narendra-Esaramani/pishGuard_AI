@@ -1,0 +1,52 @@
+{
+    "case_type": "True_Negative",
+    "url": "https://www.google.com",
+    "actual_label": 0,
+    "predicted_label": 0,
+    "probability": 0.0225,
+    "top_shap_factors": [
+        {
+            "feature": "PathLevel",
+            "value": 0.0,
+            "shap_value": -2.3766,
+            "impact": "legitimate",
+            "abs_impact": 2.3766350746154785
+        },
+        {
+            "feature": "InsecureForms",
+            "value": 0.0,
+            "shap_value": -1.5222,
+            "impact": "legitimate",
+            "abs_impact": 1.5221645832061768
+        },
+        {
+            "feature": "PctExtResourceUrls",
+            "value": 0.0,
+            "shap_value": 1.4672,
+            "impact": "phishing",
+            "abs_impact": 1.4672068357467651
+        },
+        {
+            "feature": "PctExtHyperlinks",
+            "value": 0.0,
+            "shap_value": 1.3292,
+            "impact": "phishing",
+            "abs_impact": 1.3291637897491455
+        },
+        {
+            "feature": "NoHttps",
+            "value": 0.0,
+            "shap_value": 1.2034,
+            "impact": "phishing",
+            "abs_impact": 1.2033895254135132
+        },
+        {
+            "feature": "PctExtNullSelfRedirectHyperlinksRT",
+            "value": 1.0,
+            "shap_value": -0.5721,
+            "impact": "legitimate",
+            "abs_impact": 0.5721064805984497
+        }
+    ],
+    "base_value": -0.0943
+}
