@@ -1,5 +1,14 @@
 ﻿# PhishGuard AI — Enhanced Explainable Phishing Detection System
 
+
+ ## 🚀 Live Demo
+
+**Try PhishGuard AI online:** [Open the Live Application](https://pishguard-ai-6qw6.onrender.com)
+
+Analyze URLs to identify potential phishing threats using machine learning.
+
+> Note: The application is hosted on Render's free tier, so the first request after inactivity may take some time to load.
+
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Framework: Flask](https://img.shields.io/badge/Framework-Flask%203.0-green.svg)](https://flask.palletsprojects.com/)
 [![Model: XGBoost](https://img.shields.io/badge/Model-XGBoost%20Calibrated-orange.svg)](https://xgboost.readthedocs.io/)
